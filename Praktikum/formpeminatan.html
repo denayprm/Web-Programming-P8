@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Form Example</title>
- <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Formulir Mengisi Peminatan</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Custom styles for formulir div */
+        #formulir {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 0 auto; /* Center the formulir div horizontally */
+            width: 60%; /* Adjust the width as needed */
+            margin-top: 50px; /* Add space from the top */
+        }
+        #formulir h1{
+            text-align: center;
+        }
+        #formulir p{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div id="formulir">
         <h1>FORM PENGISIAN PEMINATAN KEAHLIAN</h1>
         <p>FAKULTAS ILMU KOMPUTER UPN VETERAN JAKARTA</p>
-        <form class="form">
+        <form class="form" >
             <div class="form-container">
-                <label for="nim">NIM Mahasiswa:</label>
-                <input type="text" id="nim" name="nim" required>
-                <label for="name">Nama Mahasiswa:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="semester">Semester Mahasiswa:</label>
-                <input type="number" id="semester" name="semester" min="1" max="8" required>
+                <input type="text" id="nim" name="nim" placeholder="NIM Mahasiswa" required>
+                <input type="text" id="name" name="name" placeholder="Nama Mahasiswa" required>
+                <input type="number" id="semester" name="semester" min="1" max="8" placeholder="Semester Mahasiswa" required>
                 <label for="program-studi">Pilih Program Studi:</label>
-                <select id="program-studi" name="program-studi" required>
+                <select id="program-studi" name="program-studi" aria-placeholder="Pilih Program Studi" required>
                     <option value="" disabled selected>Pilih Program Studi</option>
-                    <option value="teknik-informatika">Teknik Informatika</option>
-                    <option value="sistem-informasi">Sistem Informasi</option>
-                    <option value="diploma-3-manajemen-informatika">Diploma 3 Manajemen Informatika</option>
+                    <option value="s1-informatika">S1 Informatika</option>
+                    <option value="s1-sistem-informasi">S1 Sistem Informasi</option>
+                    <option value="d3-sistem-informasi">D3 Sistem Informasi</option>
                 </select>
             </div>
             <div class="buttons">
@@ -30,5 +44,6 @@
             </div>
         </form>
     </div>
+    <form class="form" action="submit_form.php" method="post"></form>
 </body>
 </html>
