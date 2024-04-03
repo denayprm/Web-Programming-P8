@@ -31,12 +31,50 @@
                 <input type="text" id="name" name="name" placeholder="Nama Mahasiswa" required>
                 <input type="number" id="semester" name="semester" min="1" max="8" placeholder="Semester Mahasiswa" required>
                 <label for="program-studi">Pilih Program Studi:</label>
-                <select id="program-studi" name="program-studi" aria-placeholder="Pilih Program Studi" required>
-                    <option value="" disabled selected>Pilih Program Studi</option>
-                    <option value="s1-informatika">S1 Informatika</option>
-                    <option value="s1-sistem-informasi">S1 Sistem Informasi</option>
-                    <option value="d3-sistem-informasi">D3 Sistem Informasi</option>
-                </select>
+                <!-- HTML -->
+<select id="program-studi" onchange="showAdditionalOptions()" required>
+    <option value="" disabled selected>Pilih Program Studi</option>
+    <option value="s1-informatika">S1 Informatika</option>
+    <option value="s1-sistem-informasi">S1 Sistem Informasi</option>
+    <option value="d3-sistem-informasi">D3 Sistem Informasi</option>
+</select>
+
+<select id="additional-options"  required>
+    <!-- Opsi tambahan akan ditambahkan secara otomatis di sini -->
+</select>
+
+<script>
+    // JavaScript
+    function showAdditionalOptions() {
+        var programStudi = document.getElementById("program-studi");
+        var additionalOptions = document.getElementById("additional-options");
+
+        // Hapus opsi tambahan sebelum menambahkan yang baru
+        additionalOptions.innerHTML = "";
+
+        // Ambil nilai program studi yang dipilih
+        var selectedOption = programStudi.value;
+
+        // Tambahkan opsi tambahan berdasarkan opsi yang dipilih
+        if (selectedOption === "s1-informatika") {
+            additionalOptions.innerHTML += `
+                <option value="s1-informatika-lanjutan1">S1 Informatika Lanjutan 1</option>
+                <option value="s1-informatika-lanjutan2">S1 Informatika Lanjutan 2</option>
+            `;
+        } else if (selectedOption === "s1-sistem-informasi") {
+            additionalOptions.innerHTML += `
+                <option value="s1-sistem-informasi-lanjutan1">S1 Sistem Informasi Lanjutan 1</option>
+                <option value="s1-sistem-informasi-lanjutan2">S1 Sistem Informasi Lanjutan 2</option>
+            `;
+        } else if (selectedOption === "d3-sistem-informasi") {
+            additionalOptions.innerHTML += `
+                <option value="d3-sistem-informasi-lanjutan1">D3 Sistem Informasi Lanjutan 1</option>
+                <option value="d3-sistem-informasi-lanjutan2">D3 Sistem Informasi Lanjutan 2</option>
+            `;
+        }
+    }
+</script>
+
             </div>
             <div class="buttons">
                 <button type="submit">Submit</button>
