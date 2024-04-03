@@ -1,9 +1,4 @@
-/*
-    Nama: Muhammad Arief Budiman
-    Nim: 2210512006
-    Kelas: A S1 Sistem Informasi
-    Dosen: bu Theresiawati, S.Kom., MTI.
-*/
+
 const buttonDaftarDiri = document.querySelector(".right-button");
 const popup = document.querySelector(".popup");
 const wrapper = document.querySelector(".wrapper");
