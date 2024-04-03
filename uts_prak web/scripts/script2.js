@@ -43,3 +43,7 @@ function submitPeminatan(event) {
     window.open(popupUrl, "_blank");
     console.log("clicked");
 }
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader');
+    loader.style.display = 'none';
+});

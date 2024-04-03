@@ -1,4 +1,3 @@
-
 const buttonDaftarDiri = document.querySelector(".right-button");
 const popup = document.querySelector(".popup");
 const wrapper = document.querySelector(".wrapper");
@@ -18,4 +17,8 @@ closeButton.addEventListener("click", (event) => {
     wrapper.style.opacity = "1";
     buttonDaftarDiri.style.border = '1px black solid'
     buttonDaftarDiri.style.color = 'black'
+});
+window.addEventListener('load', function() {
+    const loader = document.querySelector('.loader');
+    loader.style.display = 'none';
 });

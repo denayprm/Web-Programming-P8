@@ -174,3 +174,23 @@ header h4[name="popup"] {
 .popup .content .close-button a:hover {
     color: rgb(12, 12, 12);
 }
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid rgb(0, 153, 255);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 30s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
