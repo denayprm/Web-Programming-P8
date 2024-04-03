@@ -1,0 +1,174 @@
+/* 
+    Nama: Muhammad Arief Budiman
+    Nim: 2210512006
+    Kelas: A S1 Sistem Informasi
+    Dosen: bu Theresiawati, S.Kom., MTI.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    font-family: Arial;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.layout {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(12, 0, 82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header img {
+    max-width: 50px;
+}
+
+header h4 {
+    color: rgb(0, 153, 255);
+}
+
+.content {
+    display: flex;
+    gap: 20px;
+    padding: 0 100px;
+}
+
+.content .aside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content .aside h1 {
+    line-height: 50px;
+    color: rgb(12, 0, 82);
+}
+
+.content .aside h1 .orange {
+    color: orange;
+}
+
+.content .aside h1 .light-blue {
+    color: rgb(0, 153, 255);
+}
+
+.content .aside .buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.content .aside .buttons button {
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px black solid;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.content .aside .buttons .left-button {
+    background-color: rgb(0, 153, 255);
+    color: white;
+    border: none;
+    transition: .2s ease-in-out;
+}
+
+.content .aside .buttons .left-button a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.content .aside .buttons .left-button:hover {
+    background-color: rgb(1, 122, 202);
+}
+
+.content .aside .buttons .right-button:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.content .pict img {
+    max-width: 180%;
+}
+
+.popup {
+    display: none;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+}
+
+.popup .active {
+    bottom: 0;
+}
+
+.popup .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.popup .content #notes {
+    margin: 0 auto;
+}
+
+.popup .content .close-button {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    margin: 20px 0;
+}
+
+.popup .content .close-button a {
+    text-decoration: none;
+    color: rgb(44, 44, 44);
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+}
+
+.popup .content .close-button a:hover {
+    color: rgb(12, 12, 12);
+}

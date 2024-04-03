@@ -1,0 +1,108 @@
+/* 
+    Nama: Muhammad Arief Budiman
+    Nim: 2210512006
+    Kelas: A S1 Sistem Informasi
+    Dosen: bu Theresiawati, S.Kom., MTI.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    font-family: Arial;
+    background-color: #38414b;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 40%;
+    background-color: white;
+    gap: 50px;
+    border-radius: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(1, 122, 202);
+    padding: 20px 50px;
+    border-radius: 10px 10px 0 0;
+}
+
+header h3 {
+    font-weight: normal;
+    line-height: 30px;
+    color: white;
+}
+
+header img {
+    max-width: 100px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-section input {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.form-section .prodi {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section .prodi select {
+    padding: 15px;
+    font-size: 14px;
+}
+
+.form-section button {
+    padding: 15px;
+    background-color: rgb(1, 122, 202);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.form-section a#back-home {
+    text-decoration: none;
+    color: white;
+}
+
+.form-section a#back-home button {
+    width: 100%;
+}
+
+.form-section button:hover {
+    background-color: rgb(0, 99, 165);
+}
+
+.peminatan {
+    display: none;
+}
+
+.peminatan fieldset {
+    padding: 10px 20px;
+}
+
+.peminatan fieldset legend {
+    padding: 0 10px;
+}
+
+.peminatan fieldset td input {
+    margin-left: 10px;
+}

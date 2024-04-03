@@ -1,0 +1,64 @@
+/* 
+    Nama: Muhammad Arief Budiman
+    Nim: 2210512006
+    Kelas: A S1 Sistem Informasi
+    Dosen: bu Theresiawati, S.Kom., MTI.
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100dvh;
+    padding: 30px;
+}
+
+fieldset {
+    padding: 30px 50px;
+    border-radius: 20px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+legend {
+    padding: 0 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.PTN {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.PTN img {
+    max-width: 150px;
+}
+
+.result {
+    font-size: 20px;
+}
+
+.btn-close {
+    padding-top: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: right;
+    margin: 0 auto;
+}
+
+.btn-close button {
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}

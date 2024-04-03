@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UTS PRAKTIKUM WEB PEMROGRAMAN</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .bagian-atas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: navy;
+            color: white;
+            padding: 20px;
+            }
+            .bagian a {
+                color: white;
+                text-decoration: none;
+            }
+            .logo-text {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+            }
+            .logo-text img {
+                margin-right: 80px;
+                width: 26px;
+                height: 26px;
+            }
+            .content {
+                justify-content: space-between;
+                display: flex;
+                align-items: flex-start;
+                padding: 100px;
+            }
+            .left-content {
+                flex: 1;
+                text-align: left;
+            }
+            h1 {
+                margin-top: 0px;
+            }
+            .right-content {
+                flex: 1;
+                text-align: right;
+            }
+            .button {
+                cursor: pointer;
+                text-decoration: none;
+                display: inline-block;
+                border-radius: 8px;
+                padding: 15px 30px; 
+                margin-right: 10px;
+                margin-top: 20px;
+            }
+            .blue-button {
+                background-color: rgb(23, 147, 255);
+                color: white;
+            }
+            .white-button {
+                background-color: white;
+                color: black;
+                border: 1px solid rgb(23, 147, 255); 
+            }
+            .white-button:hover {
+                background-color: rgb(23, 147, 255);
+                color: white;
+            }
+            .popup-form {
+                display: none;
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #f1f1f1;
+                padding: 20px;
+                border-radius: 10px;
+                z-index: 999;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            }
+            .overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 998;
+            }
+            .peminatan-box {
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                margin-top: 20px;
+            }
+            .peminatan-title {
+                margin-top: 0;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .checkbox-button {
+                display: block;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="bagian-atas">
+            <a href="https://new-fik.upnvj.ac.id/">Ini adalah Ujian Tengah Semester Pemrograman Web. Klik ini untuk ke laman Fakultas Ilmu Komputer UPN Veteran Jakarta ➜</a>
+        </div>
+        <div class="logo-text">
+            <img src="upn_logo.png" alt="Foto Logo UPNVJ" style="width: 26px; height: 26px; margin-right: 80px;"> 
+            <h4 style="color: blue;">Sistem Peminatan Fakultas Ilmu Komputer UPN Veteran Jakarta</h4>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <h1>Selamat Datang pada Sistem Peminatan Keahlian <span style="color: orange;">Fakultas Ilmu Komputer</span> <span style="color: blue;">UPN Veteran Jakarta</span></h1>
+                <p>Sistem ini sebagai tolak ukur pemahaman diri saya terhadap materi pemrograman web sistem informasi.</p>
+                <div class="button blue-button" id="openFormBtn">Mulai Mengisi Peminatan ></div>
+                <div class="button white-button">Daftar Diri</div>
+            </div>
+
+            <div class="right-content">
+                <img src="gambar_fik.jpeg" alt="Foto Fakultas Ilmu Komputer UPNVJ" style="width: 300px; height: 300px;">
+            </div>
+        </div>
+        
+        <div class="popup-form" id="popupForm">
+            <h2>FORM PENGISIAN PEMINATAN KEAHLIAN</h2> <hr>
+            <h3>FAKULTAS ILMU KOMPUTER UPN VETERAN JAKARTA</h3>
+            <form>
+                <label for="nim">NIM Mahasiswa:</label><br>
+                <input type="text" id="nim" name="nim"><br>
+                <label for="nama">Nama Mahasiswa:</label><br>
+                <input type="text" id="nama" name="nama"><br>
+                <label for="semester">Semester:</label><br>
+                <input type="text" id="semester" name="semester"><br>
+                <label for="programStudi">Pilihan Program Studi:</label><br>
+                <select id="programStudi" name="programStudi" onchange="showPeminatan()">
+                    <option value="">- Pilih Program Studi -</option>
+                    <option value="D3 Sistem Informasi">D3 Sistem Informasi</option>
+                    <option value="S1 Sistem Informasi">S1 Sistem Informasi</option>
+                    <option value="S1 Informatika">S1 Informatika</option>
+                </select><br><br>
+                <div id="peminatanOptions" style="display: none;">
+                    <label for="peminatan">Peminatan Mahasiswa:</label><br>
+                    <select id="peminatan" name="peminatan">
+                </select><br><br>
+                </div>
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeForm()">Kembali ke Home</button>
+            </form>
+        </div>
+        
+        <div class="overlay" id="overlay"></div>
+
+        <script>
+            function openForm() {
+                document.getElementById("popupForm").style.display = "block";
+                document.getElementById("overlay").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("popupForm").style.display = "none";
+                document.getElementById("overlay").style.display = "none";
+            }
+
+            document.getElementById("openFormBtn").addEventListener("click", openForm);
+        </script>
+        <script>
+            function showPeminatan() {
+                var selectedProgram = document.getElementById("programStudi").value;
+                var peminatanSelect = document.getElementById("peminatan");
+                var peminatanOptions = peminatanSelect.querySelectorAll("option");
+                var peminatanOptionsArray = Array.from(peminatanOptions);
+    
+                // Kosongkan pilihan peminatan
+                peminatanSelect.innerHTML = "";
+    
+                // Tambahkan pilihan peminatan berdasarkan program studi yang dipilih
+                if (selectedProgram === "D3 Sistem Informasi") {
+                    peminatanOptionsArray.forEach(function(option) {
+                        if (option.value === "Mobile Programmer" || option.value === "Web Developer") {
+                            peminatanSelect.appendChild(option);
+                        }
+                    });
+                } else if (selectedProgram === "S1 Sistem Informasi") {
+                    peminatanOptionsArray.forEach(function(option) {
+                        if (option.value === "Network Administrator" || option.value === "Database Administrator") {
+                            peminatanSelect.appendChild(option);
+                        }
+                    });
+                } else if (selectedProgram === "S1 Informatika") {
+                    peminatanOptionsArray.forEach(function(option) {
+                        if (option.value === "Software Engineer" || option.value === "System Analyst") {
+                            peminatanSelect.appendChild(option);
+                        }
+                    });
+                }
+    
+                // Tampilkan kotak peminatan jika program studi dipilih
+                var peminatanOptionsDiv = document.getElementById("peminatanOptions");
+                peminatanOptionsDiv.style.display = selectedProgram ? "block" : "none";
+            }
+        </script>
+    </body>
+</html>

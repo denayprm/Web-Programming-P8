@@ -1,0 +1,111 @@
+<!--
+    Nama: Muhammad Arief Budiman
+    Nim: 2210512006
+    Kelas: A S1 Sistem Informasi
+    Dosen: bu Theresiawati, S.Kom., MTI.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sistem Pengisian Peminatan</title>
+        <link rel="icon" href="assets/logo-kampus.png" type="image/png" />
+        <link rel="stylesheet" href="styles/style2.css" />
+    </head>
+    <body>
+        <div class="container">
+            <form id="form-peminatan" onsubmit="submitPeminatan(event)">
+                <header>
+                    <h3>
+                        FORM PENGISIAN PEMINATAN KEAHLIAN FAKULTAS ILMU KOMPUTER
+                        UPN "VETERAN" JAKARTA
+                    </h3>
+                    <img src="assets/logo-kampus.png" alt="" />
+                </header>
+                <div class="form-section">
+                    <input type="number" id="nim" placeholder="NIM Mahasiswa" />
+                    <input type="text" id="nama" placeholder="Nama Mahasiswa" />
+                    <input
+                        type="number"
+                        id="semester"
+                        placeholder="Semester Mahasiswa"
+                    />
+                    <div class="prodi">
+                        <label for="prodi">Pilih Program Studi:</label>
+                        <select id="prodi" name="prodi">
+                            <option value="" id="disabled" disabled selected>
+                                Pilih Program Studi
+                            </option>
+                            <option value="S1 Sistem Informasi">
+                                S1 Sistem Informasi
+                            </option>
+                            <option value="S1 Informatika">
+                                S1 Informatika
+                            </option>
+                            <option value="D3 Sistem Informasi">
+                                D3 Sistem Informasi
+                            </option>
+                        </select>
+                    </div>
+                    <div class="peminatan">
+                        <fieldset>
+                            <legend></legend>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="peminatan">Audit</label>
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="peminatan"
+                                            id="audit"
+                                            value="Audit"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="peminatan"
+                                            >Data Engineering</label
+                                        >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="peminatan"
+                                            id="data-engineering"
+                                            value="Data Engineering"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="peminatan"
+                                            >Application Developer</label
+                                        >
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="peminatan"
+                                            id="application-developer"
+                                            value="Appliaction Developer"
+                                        />
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </div>
+                    <button type="submit">Submit</button>
+                    <a href="index.html" id="back-home"
+                        ><button type="button">Kembali ke Home</button></a
+                    >
+                </div>
+            </form>
+        </div>
+
+        <script src="scripts/script2.js"></script>
+    </body>
+</html>
