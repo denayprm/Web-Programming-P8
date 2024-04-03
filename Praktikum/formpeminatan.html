@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Form Example</title>
+ <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div>
+        <h1>FORM PENGISIAN PEMINATAN KEAHLIAN</h1>
+        <p>FAKULTAS ILMU KOMPUTER UPN VETERAN JAKARTA</p>
+        <form class="form">
+            <div class="form-container">
+                <label for="nim">NIM Mahasiswa:</label>
+                <input type="text" id="nim" name="nim" required>
+                <label for="name">Nama Mahasiswa:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="semester">Semester Mahasiswa:</label>
+                <input type="number" id="semester" name="semester" min="1" max="8" required>
+                <label for="program-studi">Pilih Program Studi:</label>
+                <select id="program-studi" name="program-studi" required>
+                    <option value="" disabled selected>Pilih Program Studi</option>
+                    <option value="teknik-informatika">Teknik Informatika</option>
+                    <option value="sistem-informasi">Sistem Informasi</option>
+                    <option value="diploma-3-manajemen-informatika">Diploma 3 Manajemen Informatika</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="button" class="back-button">Kembali ke Home</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
