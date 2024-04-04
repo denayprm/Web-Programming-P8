@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validasi Nama</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    #myForm {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .form-group label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    #kirimBtn {
+      background-color: #ccc;
+      border: 1px solid black;
+      color: black;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: background-color 0.3s ease;
+      width: calc(40% - 20px);
+    }
+    #kirimBtn:hover {
+      background-color: #bbb;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 20px;
+      z-index: 1000;
+      text-align: left;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+    .popup-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .popup-content p {
+      margin: 0;
+    }
+    .popup button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s ease;
+      align-self: flex-end;
+      font-size: 12px;
+    }
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+    .popup h2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<form id="myForm">
+  <div class="form-group">
+    <label for="nama">Nama :</label>
+    <input type="text" id="nama" name="nama">
+  </div>
+  <button type="button" id="kirimBtn" onclick="validateForm()">Kirim</button>
+</form>
+
+<div id="popupNama" class="popup">
+  <h2>This Page Says</h2>
+  <div class="popup-content">
+    <p>Nama harus dimasukkan.</p>
+    <button onclick="closePopup()">Oke</button>
+  </div>
+</div>
+<div id="popupTerimaKasih" class="popup">
+  <h2>This Page Says</h2>
+  <div class="popup-content">
+    <p>Terima kasih, <span id="userNama"></span>!</p>
+    <button onclick="closePopup()">Oke</button>
+  </div>
+</div>
+<div id="overlay" class="overlay"></div>
+
+<script>
+  function validateForm() {
+    var nama = document.getElementById("nama").value;
+    if (nama === "") {
+      document.getElementById("popupNama").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    } else {
+      document.getElementById("popupTerimaKasih").style.display = "block";
+      document.getElementById("userNama").textContent = nama;
+      document.getElementById("overlay").style.display = "block";
+    }
+  }
+
+  function closePopup() {
+    document.getElementById("popupNama").style.display = "none";
+    document.getElementById("popupTerimaKasih").style.display = "none";
+    document.getElementById("overlay").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
